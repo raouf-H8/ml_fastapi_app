@@ -55,4 +55,7 @@ jobs:
           psql postgresql://user:password@localhost:5432/mydb -f init.sql
 
       - name: Run tests
-        run: pytest tests/
+        run: |
+          export PYTHONPATH=${{ github.workspace }}
+          pytest tests/
+
