@@ -58,5 +58,6 @@ jobs:
         run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
 
       - name: Run tests
+	working-directory: ${{ github.workspace }}
         run: pytest tests/
 
