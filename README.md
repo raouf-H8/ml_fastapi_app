@@ -16,21 +16,38 @@ Une API FastAPI déployée avec Docker, connectée à une base PostgreSQL, et in
 
 ## 🧱 Architecture
 
-projet_dong/_
-├── app/_
-│ ├── main.py ← API FastAPI_
-│ ├── models.py ← Modèle SQLAlchemy_
-│ └── init_db.py ← Initialisation DB_
-├── model.pkl ← Modèle ML serialisé_
-├── requirements.txt_
-├── Dockerfile_
-├── docker-compose.yml_
-├── init.sql ← Script d'init SQL_
-├── tests/_
-│ ├── test_unit.py_
-│ └── test_integration.py_
-├── nginx/_
-│ └── default.conf_
-└── .github/_
-└── workflows/_
-└── test.yml ← Pipeline GitHub Actions_
+projet_dong/
+
+├── app/
+
+│ ├── main.py ← API FastAPI
+
+│ ├── models.py ← Modèle SQLAlchemy
+
+│ └── init_db.py ← Initialisation DB
+
+├── model.pkl ← Modèle ML serialisé
+
+├── requirements.txt
+
+├── Dockerfile
+
+├── docker-compose.yml
+
+├── init.sql ← Script d'init SQL
+
+├── tests/
+
+│ ├── test_unit.py
+
+│ └── test_integration.py
+
+├── nginx/
+
+│ └── default.conf
+
+└── .github/
+
+└── workflows/
+
+└── test.yml ← Pipeline GitHub Actions
