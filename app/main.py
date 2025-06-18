@@ -1,22 +1,24 @@
+# contient uniquement l'instanciation de l'API, les routes, et l'orchestration.
+
 from fastapi import FastAPI
 from app.init_db import init_db
 from app.models import User
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+#from sqlalchemy import create_engine
+#from sqlalchemy.orm import sessionmaker
 from pydantic import BaseModel
 
 from app.models import Base
-from app.database import engine  # ou session, selon ton code
+from app.database import engine, SessionLocal  
 import os
 import joblib
 
-Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine) #sert à créer automatiquement les tables dans ta base de données à partir de tes modèles SQLAlchemy declaré avec base
 
-model = joblib.load("model.pkl")  # ou "./model.pkl" selon ton dossier de travail
+model = joblib.load("model.pkl")  
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(bind=engine)
+#DATABASE_URL = os.environ.get("DATABASE_URL")
+#engine = create_engine(DATABASE_URL)
+#SessionLocal = sessionmaker(bind=engine)
 
 app = FastAPI()
 
