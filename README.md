@@ -20,9 +20,13 @@ projet_dong/
 
 ├── app/
 
-│ ├── main.py ← API FastAPI
+│ ├── main.py ← contient uniquement l'instanciation de l'API, les routes, et l'orchestration.
 
 │ ├── models.py ← Modèle SQLAlchemy
+
+│ ├── database.py ← contient la configuration technique de la BDD (engine, SessionLocal, DATABASE_URL)
+
+│ ├── __init__.py ← fichier vide indiquant que le dossier /app est un package
 
 │ └── init_db.py ← Initialisation DB
 
