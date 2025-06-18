@@ -4,9 +4,13 @@ from app.models import User
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from pydantic import BaseModel
-import os
 
+from app.models import Base
+from app.database import engine  # ou session, selon ton code
+import os
 import joblib
+
+Base.metadata.create_all(bind=engine)
 
 model = joblib.load("model.pkl")  # ou "./model.pkl" selon ton dossier de travail
 
