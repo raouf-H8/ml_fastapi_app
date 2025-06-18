@@ -54,8 +54,9 @@ jobs:
           sudo apt-get update && sudo apt-get install -y postgresql-client
           psql postgresql://user:password@localhost:5432/mydb -f init.sql
 
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=${{ github.workspace }}/app" >> $GITHUB_ENV
+
       - name: Run tests
-        run: |
-          export PYTHONPATH=${{ github.workspace }}
-          pytest tests/
+        run: pytest tests/
 
