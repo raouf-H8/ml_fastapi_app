@@ -1,4 +1,2 @@
-- name: Run tests
-  run: pytest tests/
-  env:
-    PYTHONPATH: ${{ github.workspace }}
+# init file - Ce fichier peut être vide, c’est OK. Son seul rôle est d’informer Python que ce dossier est un package.
+# est nécessaire pour que Python considère un dossier comme un package importable.
