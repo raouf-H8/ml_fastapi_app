@@ -1,4 +1,5 @@
 # contient la configuration technique de la BDD (engine, SessionLocal, DATABASE_URL)
+# 
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
