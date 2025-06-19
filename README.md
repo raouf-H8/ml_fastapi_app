@@ -21,9 +21,9 @@ Une API FastAPI déployée avec Docker, connectée à une base PostgreSQL, et in
             [GitHub Actions]
                  ↓
         ┌────────┴─────────┐
-   [Tests passent ?]   →   [Non]  → STOP ❌
+    [Tests passent ?]   →   [Non]  → STOP ❌
          ↓ Oui
-   [Appel webhook Render]
+          [Appel webhook Render]
          ↓
     [Déploiement Render]
          ↓
