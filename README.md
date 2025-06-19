@@ -14,6 +14,22 @@ Une API FastAPI déployée avec Docker, connectée à une base PostgreSQL, et in
 - Tests unitaires & d’intégration automatisés (Pytest)
 - Visualisation DB via PGAdmin (à venir)
 
+## Deploiement piloté par GitHub Actions (via CI/CD + webhook) sur Render
+
+          [GitHub commit]
+                 ↓
+            [GitHub Actions]
+                 ↓
+        ┌────────┴─────────┐
+   [Tests passent ?]   →   [Non]  → STOP ❌
+         ↓ Oui
+   [Appel webhook Render]
+         ↓
+    [Déploiement Render]
+         ↓
+        ✅ En ligne
+
+
 ## 🧱 Architecture
 
 projet_dong/
