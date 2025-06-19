@@ -5,8 +5,8 @@ services:
     build: .
     expose:
       - "8000"
-    environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/mydb
+    env_file:
+      - .env
     depends_on:
       - db
 
@@ -21,25 +21,20 @@ services:
 
   db:
     image: postgres:15
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
+    env_file:
+      - .env
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - pgdata:/var/lib/postgresql/data  # Ajout important pour persistance
+      - pgdata:/var/lib/postgresql/data #ajout important pour persistence
 
   test:
     build: .
     depends_on:
       - db
-    environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/mydb
+    env_file:
+      - .env
     command: ["sh", "-c", "sleep 6 && pytest"]
 
+#sert à déclarer un volumes nommé pgdata (utilisé plus haut)
 volumes:
   pgdata:
-
-
-
-
