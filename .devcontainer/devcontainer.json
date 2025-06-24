@@ -13,7 +13,8 @@
     "ms-vscode.makefile-tools",           // Pour la reconnaissance et exécution des Makefile
     "eamodio.gitlens",                    // GitLens : super outil Git (voir qui a modifié quoi)
     "mhutchie.git-graph",                 // Pour visualiser les branches Git
-    "streetsidesoftware.code-spell-checker" // Spell checker, utile pour README et commentaires
+    "streetsidesoftware.code-spell-checker", // Spell checker, utile pour README et commentaires
+    "github.vscode-github-actions" //utile pour voir les workflow github actions
   ],
   "postCreateCommand": "apt update && apt install -y git make && pip install -r requirements.txt",
   "mounts": [
