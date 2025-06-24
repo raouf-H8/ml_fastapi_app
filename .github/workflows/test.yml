@@ -17,7 +17,6 @@ jobs:
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
-          POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
         ports:
           - 5432:5432
         options: >-
@@ -55,7 +54,7 @@ jobs:
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
-          POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+          POSTGRES_HOST: postgres
         run: |
           sudo apt-get update && sudo apt-get install -y postgresql-client
           PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -f init.sql 
