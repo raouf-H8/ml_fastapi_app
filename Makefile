@@ -26,4 +26,15 @@ shell:
 
 #testdev sur la plateforme de devcontainer
 testd:
+	find . -name "*.pyc" -delete
 	pytest tests/
+	
+#testdev unitaires
+testdu:
+	find . -name "*.pyc" -delete
+	pytest tests/test_unit.py 	
+
+#testdev integ
+testdi:
+	find . -name "*.pyc" -delete
+	pytest tests/test_integration.py	

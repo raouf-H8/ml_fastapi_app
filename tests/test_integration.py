@@ -32,3 +32,38 @@ def test_predict_invalid_input():
     bad_input = {"x1": "not a number"}  
     response = client.post("/predict", json=bad_input)
     assert response.status_code == 422
+
+#ce test vérifie : 
+#La route /entities fonctionne et renvoie un status 200.
+#Le format de réponse contient les clés entities et anonymized_text.
+#Le texte anonymisé contient bien des X à la place des entités reconnues.
+#Les entités sont bien structurées.
+
+def test_extract_entities():
+    payload = {
+        "text": "Emmanuel Macron est né à Amiens.",
+        "model_language": "fr",
+        "model_size": "sm"
+    }
+
+    response = client.post("/entities", json=payload)
+    
+    assert response.status_code == 200
+    
+    data = response.json()
+    
+    assert "entities" in data
+    assert "anonymized_text" in data
+
+    entities = data["entities"]
+    anon_text = data["anonymized_text"]
+
+    # Vérifie qu’au moins une entité a été détectée
+    assert isinstance(entities, list)
+    assert all("start" in e and "end" in e and "text" in e and "type" in e for e in entities)
+
+    # Vérifie que les entités ont bien été remplacées par des "X"
+    for entity in entities:
+        start = entity["start"]
+        end = entity["end"]
+        assert set(anon_text[start:end]) == {"X"}

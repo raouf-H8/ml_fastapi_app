@@ -8,6 +8,7 @@ Une API FastAPI déployée avec Docker, connectée à une base PostgreSQL, et in
 ## 🚀 Fonctionnalités
 
 - CRUD sur des utilisateurs via SQLAlchemy
+- Fonctionnalité de reconnaissance d'entités nommées
 - Prédiction via un modèle machine learning (chargé depuis `model.pkl`)
 - Base de données initialisée automatiquement (`init.sql`)
 - Reverse proxy via Nginx
@@ -37,6 +38,7 @@ projet_dong/
 ├── app/
 
 │ ├── main.py ← contient uniquement l'instanciation de l'API, les routes, et l'orchestration.
+│ ├── nlp_models ← contient les dossiers des modèles nlp pour la detection d'entitees nommees
 
 │ ├── models.py ← Modèle SQLAlchemy
 
@@ -57,7 +59,7 @@ projet_dong/
 ├── init.sql ← Script d'init SQL
 
 ├── tests/
-
+├── __init__.py
 │ ├── test_unit.py
 
 │ └── test_integration.py
