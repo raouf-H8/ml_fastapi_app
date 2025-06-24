@@ -57,12 +57,11 @@ jobs:
           POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
         run: |
           sudo apt-get update && sudo apt-get install -y postgresql-client
-          PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -f init.sql
+          PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -f init.sql 
 
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
-
       - name: Run tests
         run: pytest tests/
 
