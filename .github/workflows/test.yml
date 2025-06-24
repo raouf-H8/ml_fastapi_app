@@ -64,7 +64,6 @@ jobs:
       - name: Run tests
         run: pytest tests/
 
-
   deploy:
     needs: test
     runs-on: ubuntu-latest
