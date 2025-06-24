@@ -7,4 +7,4 @@ pytest
 scikit-learn
 httpx
 python-dotenv
-spacy==3.0.0
+spacy
