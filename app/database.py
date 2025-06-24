@@ -6,7 +6,10 @@ import os
 
 #update pour utiliser le .env et charger les var d'env
 from dotenv import load_dotenv
-load_dotenv()
+
+# Ne charge le .env que si on n’est pas en CI
+if not os.getenv("GITHUB_ACTIONS"):
+    load_dotenv()
 
 
 DATABASE_URL = os.getenv("DATABASE_URL") #le DATABASE_URL ETAIT ANCIENNEMENT défini dans le test.yml et docker-compose.yml 
