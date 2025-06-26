@@ -1,9 +1,9 @@
 
-# 🧠 Projet Dong – API FastAPI avec modèle ML et PostgreSQL
+# 🧠 Projet Dong – API FastAPI avec modèle ML, PostgreSQL et CI/CD complet
 
 ![Tests](https://github.com/raouf-H8/ml_fastapi_app/actions/workflows/test.yml/badge.svg)
 
-Une API FastAPI déployée avec Docker, connectée à une base PostgreSQL, et intégrée à un pipeline CI avec GitHub Actions.
+Une API FastAPI déployée avec Docker(service Render), connectée à une base PostgreSQL(service Render), et intégrée à un pipeline CI avec GitHub Actions.
 
 ## 🚀 Fonctionnalités
 
