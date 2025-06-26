@@ -5,3 +5,6 @@ __pycache__/
 pytest_cache/
 **/.pytest_cache/
 .vscode/
+.coverage
+coverage.xml
+htmlcov/

@@ -61,8 +61,8 @@ jobs:
 
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
-      - name: Run tests
-        run: pytest tests/
+      - name: Run tests with coverage
+        run: pytest --cov=app --cov-report=xml --cov-report=term-missing tests/
 
   deploy:
     needs: test
