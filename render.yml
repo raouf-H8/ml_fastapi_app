@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: ml_fastapi_app-1
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: true
